@@ -3,16 +3,34 @@
   <p v-show="isVisible">{{description}}</p>
   <p v-if="!isVisible">Mensaje oculto</p>
   <p v-else>Mensaje no oculto</p>
-  <input v-model="description" type="text">
   <Todo></Todo>
 </template>
 
 <script>
 
 import Todo from "@/components/Todo";
+// import {ref, onMounted, onBeforeMount} from "vue";
 export default {
   name: 'App',
   components: {Todo},
+  // setup() {
+  //   //propiedades reactivas
+  //   const title = ref();
+  //   const description = ref("Este es un mensaje de prueba.");
+  //   const isVisible = ref(false);
+  //
+  //   //métodos del ciclo de vida (hooks)
+  //   onMounted(() => {
+  //     title.value = "Hola Richard";
+  //   });
+  //   onBeforeMount(() => {
+  //     alert("Componente desmontado")
+  //   })
+  //
+  //   return {
+  //     title, description, isVisible
+  //   }
+  // },
   data() {
     return {
       title: "Hola Richard",
@@ -31,10 +49,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.bg-goldenrod {
-  background: goldenrod;
-  margin: 1rem;
 }
 </style>
